@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms Of Use</title>
   <link rel="stylesheet" href="assets/css/terms.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  
+  <script src="assets/js/terms.js"></script>
+  <link rel="shortcut icon" href="assets/img/hamas-logo.png" type="image/x-icon">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
   <header class="l-header">
     <nav class="nav bd-grid">
       <div class="nav__logo">
-        <a href="#"><img src="E:\Portfolio-Hamas\assets\img\logo.webp" alt="" width="250px" height="250px"></a>
+        <a href="#"><img src="assets/img/logo.webp" alt="" width="250px" height="250px"></a>
       </div>
 
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="#" class="nav__link">Digital Services</a></li>
-          <li><a href="#" class="nav__link">Ministries</a></li>
-          <li><a href="#" class="nav__link active">Terms and Conditions</a></li>
+          <li><a href="login.html" class="nav__link">Login</a></li>
+          <li><a href="signup.html" class="nav__link">Sign Up</a></li>
         </ul>
       </div>
 
@@ -127,35 +122,19 @@
     <div class="footer__container bd-grid">
       <h2 class="footer__title">Hamas</h2>
       
-      <div class="footer__social">
-        <a href="#" class="footer__icon"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="footer__icon"><i class="fa-brands fa-telegram"></i></a>
-        <a href="#" class="footer__icon"><i class="fa-solid fa-envelope"></i></a>
-      </div>
+        <footer class="footer">
+            <p class="footer__title">Hamas news on Social Media</p>
+            <div class="footer__social">
+                <a href="https://www.facebook.com/xysrafi/" class="footer__icon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://t.me/" class="footer__icon" target="_blank"><i class='bx bxl-telegram' ></i></a>
+                <a href="https://twitter.com/" class="footer__icon" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                
+            </div>
 
       <p class="footer__copy">
        &#169; Hamas. All rights reserved
       </p>
     </div>
   </footer>
-
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    if(navToggle && navMenu){
-      navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-      });
-    }
-
-    // Close menu when clicking on any link on small screens
-    const navLinks = document.querySelectorAll('.nav__link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-      });
-    });
-  </script>
 </body>
 </html>

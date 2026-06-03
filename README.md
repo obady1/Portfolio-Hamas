@@ -1,5 +1,6 @@
 # Hamas-Portfolio
 **Designing a front-end website to display a brief overview of the Hamas movement**
+<video controls src="assets/vid/HamasVid.mp4" title="show Hamas Portfolio"></video>
 ## Site structure (sections)
 ### 1. Header
 It has a top navigation bar that allows quick navigation between page sections.
