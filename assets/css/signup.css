@@ -1,0 +1,258 @@
+/* =========================================
+   Google Fonts Import
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   CSS Variables (:root)
+========================================= */
+:root {
+  --hue-color: 145;
+  
+  /* Primary Colors */
+  --primary-color: hsl(var(--hue-color), 55%, 45%);
+  --primary-hover: hsl(var(--hue-color), 55%, 35%);
+  --primary-light: hsl(var(--hue-color), 60%, 95%);
+  
+  /* Neutral & Background Colors */
+  --bg-body: hsl(var(--hue-color), 15%, 98%);
+  --card-bg: #ffffff;
+  
+  /* Text Colors */
+  --text-dark: hsl(var(--hue-color), 30%, 15%);
+  --text-muted: hsl(var(--hue-color), 15%, 45%);
+  
+  /* Form Elements */
+  --input-bg: #ffffff;
+  --input-border: hsl(var(--hue-color), 15%, 85%);
+  --input-focus: hsl(var(--hue-color), 55%, 75%);
+  
+  /* Utilities */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --border-radius-lg: 16px;
+  --border-radius-sm: 8px;
+  --transition-smooth: all 0.25s ease-in-out;
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================
+   Global Styles & Resets
+========================================= */
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Override Bootstrap Jumbotron for perfect centering */
+.jumbotron {
+  background-color: transparent;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+   Card Design (Form Wrapper)
+========================================= */
+.jumbotron .row > div[class*="col-"] {
+  background-color: var(--card-bg);
+  padding: 3rem 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* =========================================
+   Typography & Spacing
+========================================= */
+h1 {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem !important;
+}
+
+p.lead {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* مساحة واضحة بين كل حقل والذي يليه */
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* =========================================
+   Form Controls (Inputs & Selects)
+========================================= */
+.form-control {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: var(--transition-smooth);
+  height: auto;
+  box-shadow: none; /* إزالة ظلال Bootstrap الافتراضية المزعجة */
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--input-focus);
+  outline: none;
+}
+
+/* Customizing Select Dropdowns */
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px;
+  padding-right: 2.5rem;
+}
+
+/* Radio Buttons */
+.form-check-inline {
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-check-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-check-input {
+  cursor: pointer;
+  accent-color: var(--primary-color);
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0; /* منع تداخل الأزرار مع النص */
+}
+
+/* =========================================
+   Buttons
+========================================= */
+.btn {
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+.btn-success {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  margin-top: 1rem;
+}
+
+.btn-success:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* =========================================
+   Alerts & Separator
+========================================= */
+.alert-info {
+  background-color: var(--primary-light);
+  border: 1px solid hsl(var(--hue-color), 50%, 90%);
+  color: var(--text-dark);
+  border-radius: var(--border-radius-sm);
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.alert-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.alert-link:hover {
+  text-decoration: underline;
+}
+
+/* حل جذري لمشكلة تداخل الفاصل باستخدام Flexbox */
+.text-center p:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.text-center p:first-of-type::before,
+.text-center p:first-of-type::after {
+  content: "";
+  flex: 1; /* التمدد التلقائي لملء الفراغ */
+  height: 1px;
+  background-color: var(--input-border);
+  margin: 0 1rem; /* مسافة أمان بين الخط والكلمة */
+}
+
+/* =========================================
+   Responsive Design (Mobile Fixes)
+========================================= */
+@media (max-width: 768px) {
+  .jumbotron .row > div[class*="col-"] {
+    padding: 2rem 1.5rem; /* تقليل الحواف الداخلية في الجوال */
+  }
+  
+  .form-check-inline {
+    margin-right: 1rem;
+  }
+  
+  /* جعل حقول تاريخ الميلاد تترتب فوق بعضها في الشاشات الصغيرة جداً لتجنب التداخل */
+  .no-gutters > .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
