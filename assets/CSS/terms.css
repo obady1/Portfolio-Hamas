@@ -1,0 +1,97 @@
+      /* أنماط صفحة الشروط المخصصة */
+      .terms-content {
+        background-color: var(--bg-white);
+        padding: var(--mb-5);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 25px rgba(14, 36, 49, 0.05);
+        margin-top: var(--mb-4);
+      }
+
+      .meta-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--mb-3);
+        padding-bottom: var(--mb-4);
+        margin-bottom: var(--mb-4);
+        border-bottom: 1px solid #edf2f7;
+        color: #718096;
+        font-size: var(--smaller-font-size);
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .terms-article {
+        margin-bottom: var(--mb-5);
+      }
+
+      .terms-article:last-child {
+        margin-bottom: 0;
+      }
+
+      .terms-heading {
+        font-size: var(--h3-font-size);
+        color: var(--first-color);
+        margin-bottom: var(--mb-2);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .terms-heading i {
+        font-size: 1.1rem;
+      }
+
+      .terms-paragraph {
+        text-align: justify;
+        margin-bottom: var(--mb-2);
+      }
+
+      .terms-list {
+        margin-right: var(--mb-4);
+        margin-top: var(--mb-2);
+      }
+
+      .terms-list-item {
+        position: relative;
+        padding-right: var(--mb-3);
+        margin-bottom: var(--mb-1);
+      }
+
+      .terms-list-item::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 0;
+        color: var(--first-color);
+        font-size: 0.85rem;
+      }
+
+      .notice-box {
+        background-color: hsl(var(--hue-color), 40%, 96%);
+        border-right: 4px solid var(--first-color);
+        padding: var(--mb-3);
+        border-radius: 0 0.5rem 0.5rem 0;
+        margin: var(--mb-4) 0;
+      }
+
+      .notice-box-title {
+        font-weight: var(--font-bold);
+        color: var(--second-color);
+        margin-bottom: var(--mb-1);
+      }
+
+      .footer-heading {
+        font-size: 2rem;
+        margin-bottom: var(--mb-4);
+      }
+
+      @media screen and (max-width: 767px) {
+        .terms-content {
+          padding: var(--mb-3);
+        }
+      }
