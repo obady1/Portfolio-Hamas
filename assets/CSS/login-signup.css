@@ -1,0 +1,239 @@
+/* ============================================
+   ملف: auth.css
+   يحتوي على: أنماط صفحات المصادقة (login, signup)
+   ============================================ */
+
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*===== المتغيرات =====*/
+:root {
+  --auth-hue: 145;
+  --auth-primary: hsl(var(--auth-hue), 55%, 38%);
+  --auth-primary-hover: hsl(var(--auth-hue), 55%, 30%);
+  --auth-light-bg: hsl(var(--auth-hue), 20%, 98%);
+  --auth-card-bg: #ffffff;
+  --auth-border: hsl(var(--auth-hue), 15%, 86%);
+  --auth-focus: hsl(var(--auth-hue), 55%, 88%);
+  --auth-text-dark: hsl(var(--auth-hue), 25%, 15%);
+  --auth-text-muted: hsl(var(--auth-hue), 12%, 45%);
+}
+
+/*===== BASE =====*/
+.auth-body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--auth-light-bg);
+  color: var(--auth-text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.auth-card {
+  background-color: var(--auth-card-bg);
+  padding: 3rem 2.25rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(14, 36, 49, 0.04);
+  border: 1px solid rgba(14, 36, 49, 0.02);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.auth-card:hover {
+  box-shadow: 0 16px 36px rgba(14, 36, 49, 0.08);
+  transform: translateY(-2px);
+}
+
+.auth-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--auth-text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-subheading {
+  font-size: 0.95rem;
+  color: var(--auth-text-muted);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/*===== FORM =====*/
+.field-group {
+  margin-bottom: 1.5rem;
+}
+
+.field-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--auth-text-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.field-input {
+  width: 100%;
+  background-color: #f9fbfc;
+  border: 1px solid var(--auth-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--auth-text-dark);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field-input::placeholder {
+  color: #a0afb7;
+}
+
+.field-input:focus {
+  background-color: #ffffff;
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 4px var(--auth-focus);
+  outline: none;
+}
+
+select.field-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px;
+  padding-right: 2.5rem;
+}
+
+/*===== BUTTONS =====*/
+.auth-btn-primary {
+  width: 100%;
+  background-color: var(--auth-primary);
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  margin-top: 1.5rem;
+}
+
+.auth-btn-primary:hover {
+  background-color: var(--auth-primary-hover);
+  box-shadow: 0 6px 20px rgba(34, 139, 34, 0.25);
+  transform: translateY(-1px);
+}
+
+.auth-btn-secondary {
+  width: 100%;
+  background-color: transparent;
+  border: 1.5px solid var(--auth-primary);
+  color: var(--auth-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin-top: 1rem;
+}
+
+.auth-btn-secondary:hover {
+  background-color: var(--auth-primary);
+  color: #fff;
+  border-color: var(--auth-primary);
+}
+
+/*===== SEPARATOR =====*/
+.auth-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--auth-text-muted);
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.auth-separator::before,
+.auth-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--auth-border);
+  margin: 0 10px;
+}
+
+/*===== LINKS =====*/
+.auth-link {
+  color: var(--auth-text-muted);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.auth-link:hover {
+  color: var(--auth-primary);
+  text-decoration: underline;
+}
+
+/*===== NOTICE BOX =====*/
+.auth-notice {
+  background-color: hsl(var(--auth-hue), 50%, 96%);
+  border: 1px solid hsl(var(--auth-hue), 50%, 90%);
+  color: var(--auth-text-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.auth-notice a {
+  color: var(--auth-primary);
+  font-weight: 600;
+}
+
+/*===== GENDER OPTIONS =====*/
+.gender-options {
+  display: flex;
+  gap: 2rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+  accent-color: var(--auth-primary);
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+/*===== RESPONSIVE =====*/
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+  .auth-heading {
+    font-size: 1.5rem;
+  }
+  .gender-options {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

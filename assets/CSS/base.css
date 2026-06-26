@@ -1,0 +1,156 @@
+/* ============================================
+   ملف: base.css (مُحسَّن بالكامل)
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  --font-bold: 700;
+
+  /* الألوان */
+  --hue-color: 122;
+  --first-color: hsl(var(--hue-color), 89%, 30%);
+  --first-color-alt: hsl(var(--hue-color), 89%, 25%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  --text-color: #2d3748;
+  --bg-light: #f9fafb;
+  --bg-white: #ffffff;
+
+  /* الخطوط */
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2.2rem;
+  --h2-font-size: 1.4rem;
+  --h3-font-size: 1.2rem;
+  --normal-font-size: 1rem;
+  --smaller-font-size: .85rem;
+
+  /* === نظام المسافات الموحد === */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 2.5rem;   /* 40px */
+  --spacing-3xl: 3rem;     /* 48px */
+  --spacing-4xl: 4rem;     /* 64px */
+
+  /* التوافق مع المتغيرات القديمة */
+  --mb-1: var(--spacing-sm);
+  --mb-2: var(--spacing-md);
+  --mb-3: var(--spacing-lg);
+  --mb-4: var(--spacing-xl);
+  --mb-5: var(--spacing-2xl);
+  --mb-6: var(--spacing-3xl);
+
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+/* تحديث الخطوط للشاشات الكبيرة */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.8rem;
+    --h2-font-size: 2.2rem;
+    --h3-font-size: 1.6rem;
+    --normal-font-size: 1.05rem;
+    --smaller-font-size: .9rem;
+    --spacing-4xl: 5rem;
+  }
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
+  background-color: var(--bg-light);
+  line-height: 1.7; /* تحسين القراءة */
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== الحاوية العامة =====*/
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+}
+
+/*===== عناوين الأقسام =====*/
+.section-heading {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.section-heading::after {
+  position: absolute;
+  content: '';
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: calc(100% + 0.5rem);
+  background-color: var(--first-color);
+}
+
+/* مسافات الأقسام باستخدام clamp */
+.section-padding {
+  padding-top: clamp(var(--spacing-3xl), 8vh, var(--spacing-4xl));
+  padding-bottom: clamp(var(--spacing-xl), 6vh, var(--spacing-3xl));
+}
+
+@media screen and (min-width: 768px) {
+  .section-heading {
+    margin-bottom: var(--spacing-2xl);
+  }
+  .section-heading::after {
+    width: 80px;
+  }
+}
